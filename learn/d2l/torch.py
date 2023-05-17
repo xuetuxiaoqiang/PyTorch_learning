@@ -105,6 +105,8 @@ def plot(X, Y=None, xlabel=None, ylabel=None, legend=None, xlim=None,
         else:
             axes.plot(y, fmt)
     set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend)
+    plt.draw()
+    plt.pause(0.1)
 
 class Timer:
     """Record multiple running times."""
@@ -324,7 +326,7 @@ class Animator:
             self.axes[0].plot(x, y, fmt)
         self.config_axes()
         plt.draw()
-        plt.pause(0.001)
+        plt.pause(0.1)
         display.display(self.fig)
         display.clear_output(wait=True)
 
